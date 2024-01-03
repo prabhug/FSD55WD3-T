@@ -1,0 +1,10 @@
+<script>        
+var request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v2/all");
+request.send();
+request.onload = function(){
+    var result = JSON.parse(request.response);
+   for(let jsonvalues in result){
+    console.log(result[jsonvalues].name+" , "+result[jsonvalues].region+" , "+result[jsonvalues].subregion+" , "+result[jsonvalues].population);} 
+}
+</script>
